@@ -43,8 +43,8 @@ class UserCubit extends Cubit<UserState> {
     try {
       emit(SignInLoading());
       final response = await api.post(
-          // 'https://food-api-omega.vercel.app/api/v1/user/signin',
-          // data: {'email': signInEmail.text, 'password': signInPassword.text}
+          'https://food-api-omega.vercel.app/api/v1/user/signin',
+          data: {'email': signInEmail.text, 'password': signInPassword.text}
       );
       emit(SignInSuccess());
       print(response);
