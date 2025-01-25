@@ -45,6 +45,14 @@ class UserCubit extends Cubit<UserState> {
   TextEditingController confirmPassword = TextEditingController();
 
   SignInModel? user;
+
+  uploadProfilePic(XFile image) {
+    profilePic = image;
+    emit(UploadProfileImage());
+
+  }
+
+
   signIn() async {
     try{
       emit(SignInLoading());
